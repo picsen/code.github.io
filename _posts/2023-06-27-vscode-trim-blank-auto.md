@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "markdown toddler"
-date:   2023-07-12 09:13:52 +0900
-categories: jekyll update
+title:  "Visual Studio Code에서 파일 저장시 불필요한 공백 제거하기"
+date:   2023-06-27 09:13:52 +0900
+categories: vscode
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
