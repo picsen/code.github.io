@@ -3,27 +3,35 @@ layout: post
 title:  "Visual Studio Code에서 파일 저장시 불필요한 공백 제거하기"
 date:   2023-06-27 09:13:52 +0900
 categories: vscode
+image: assets/images/Pasted_image_20230717020503.png
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+Visual Studio Code에서 파일 저장시 불필요한 공백 제거 기능 설정하는 방법에 대하여 정리하였습니다.
 
-Jekyll requires blog post files to be named according to the following format:
+1. Visual Studio Code에서 black 설정 추가
+File -> Preferences -> Settings 메뉴 이동
+단축키 Ctrl + ,
 
-`YEAR-MONTH-DAY-title.MARKUP`
+모든 파일에 대하여 적용하는 경우에는 Whitespace로 검색후에 Trim Trailing Whitespace에서 체크 박스 옵션 선택
+![](https://blog.kakaocdn.net/dn/bAEgUC/btslB0FBdqw/5Onv7993eKyhiuXF1KXxNk/img.png)
 
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+Markdown 파일의 경우에는 개행을 위하여 공백 2개가 필요하기 때문에 공백 제거시에 문제가 발생합니다.
 
-Jekyll also offers powerful support for code snippets:
+이럴 경우에 특정 파일에 대해서 적용하기 위해서는 화면 하단에서 특정 언어 선택후에 저장하면 됩니다.
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+이때 이전에 모든 파일에 적용하기 위한 설정을 제거합니다.
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+전역 설정에서 제거
+![](https://blog.kakaocdn.net/dn/bzHpWl/btslw8j31z4/L3Ekrs9uBHBWTV93jKUsdk/img.png)
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+
+python에서만 설정
+![](https://blog.kakaocdn.net/dn/rM1YB/btslDEV4ahx/AOKAck4dXPsz1KlQ84VcQK/img.png)
+
+
+Files: Trim Trailing Whitespace 사용 설정
+  
+![](https://blog.kakaocdn.net/dn/b3ZAUW/btslDFAF8bb/NgVJyOmLZTK1NUKuOyrQtk/img.png)
+
+
+내부 이미지 테스트
+![[assets/images/Pasted_image_20230717020503.png]]
