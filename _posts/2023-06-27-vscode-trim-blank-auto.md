@@ -33,5 +33,8 @@ Files: Trim Trailing Whitespace 사용 설정
 ![](https://blog.kakaocdn.net/dn/b3ZAUW/btslDFAF8bb/NgVJyOmLZTK1NUKuOyrQtk/img.png)
 
 
-내부 이미지 테스트
-![[assets/images/Pasted_image_20230717020503.png]]
+내부 이미지 테스트1
+![[/assets/images/Pasted_image_20230717020503.png]]
+
+내부 이미지 테스트2
+![](/assets/images/Pasted_image_20230717020503.png)
