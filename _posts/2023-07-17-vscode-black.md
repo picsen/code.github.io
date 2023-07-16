@@ -32,7 +32,7 @@ File -> Preferences -> Settings 메뉴 이동
 
 #### Visual Studio Code에서 settings.json 편집
 
-![[/assets/images/Pasted image 20230717010113.png]]
+![](/assets/images/Pasted image 20230717010113.png)
 
 변경전
 ```json
