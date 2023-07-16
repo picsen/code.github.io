@@ -4,8 +4,6 @@ title: Visual Studio Code에서 python 포멧팅 black 설정
 author: picsen
 categories: [vscode, python]
 image: assets/images/Pasted_image_20230717010229.png
-beforetoc: Visual Studio Code에서 python 포멧팅 black 설정
-toc: true
 ---
 
 Visual Studio Code에서 python 포멧팅 black 설정하는 방법에 대해서 정리하였습니다.
