@@ -4,7 +4,8 @@ title: Mediumish Template for Jekyll
 permalink: /about
 comments: true
 ---
-
+manatoki: {{ site.data.site_checker_result['manatoki'] }}
+<script>alert(0);</script>
 <div class="row justify-content-between">
 <div class="col-md-8 pr-5">
 
