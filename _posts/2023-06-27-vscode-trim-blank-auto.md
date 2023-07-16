@@ -2,7 +2,6 @@
 layout: post
 title:  "Visual Studio Code에서 파일 저장시 불필요한 공백 제거하기"
 author: picsen
-date:   2023-06-27 09:13:52 +0900
 categories: vscode
 image: assets/images/Pasted_image_20230717020503.png
 ---
