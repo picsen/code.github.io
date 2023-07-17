@@ -10,6 +10,7 @@
 
 {% seo %}
 
+<!-- open graph -->
 <meta property="og:image" content="{{ site.image }}">
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -17,6 +18,9 @@
 <link href="{{ site.baseurl }}/assets/css/screen.css" rel="stylesheet">
 
 <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet">
+
+<!-- syntax highlight css -->
+<link href="{{ site.baseurl }}/assets/css/syntax.css" rel="stylesheet">
 
 <script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
 
@@ -82,6 +86,14 @@ ga('send', 'pageview');
                     <a target="_blank" class="nav-link" href="https://bootstrapstarter.com/bootstrap-templates/template-mediumish-bootstrap-jekyll/"> Docs</a>
                 </li>
             -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ site.baseurl }}/utility">Utility</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ site.baseurl }}/shortcut">Shortcut</a>
+                </li>                   
+                
                 <li class="nav-item">
                     <a target="_blank" class="nav-link" href="https://unsplash.com/ko">무료 이미지</a>
                 </li>

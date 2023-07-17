@@ -65,5 +65,5 @@ lazyimages: disabled
 
 exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock, Mediumish_template.xlsx, Templates, .obsidian]
 
-timezone: Asia/Seoul
+#timezone: Asia/Seoul
 future: true
