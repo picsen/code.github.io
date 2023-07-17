@@ -2,7 +2,8 @@
 layout: post
 title:  "We all wait for summer"
 author: john
-categories: [ jekyll, tutorial ]
+categories: tutorial
+tags: mediumish
 image: assets/images/5.jpg
 rating: .5
 ---
