@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function(){
             </div>
         </form>
 
-        <p>This website is built with Jekyll and Mediumish template for Jekyll. It's for demonstration purposes, no real content can be found. Mediumish template for Jekyll is compatible with Github pages, in fact even this demo is created with Github Pages and hosted with Github.</p>
+        <p>마크다운 이름 변경시 귀찮아서 만들어 보았습니다. 이후에 문자열 변환에 관련된 기능들이 계속 업데이트 될 예정입니다.</p>
 
         <!--
         <p class="mb-5"><img class="shadow-lg" src="{{site.baseurl}}/assets/images/mediumish-jekyll-template.png" alt="jekyll template mediumish" /></p>
