@@ -1,0 +1,109 @@
+- url: https://brave.com/ko
+  domain: brave.com
+  title: Adblocker로 안전하고 빠르며 프라이버시가 보장되는 웹 브라우저 | Brave Browser
+  description: Brave 브라우저는 빠르고 보안이 뛰어나며, 프라이버시를 보호해주는 PC, Mac, 모바일용 웹 브라우저입니다. 추적
+    소프트웨어를 차단함으로써 데이터 사용량과 배터리를 절약해주는 브라우저를 지금 다운로드하여 빠르고 광고 없는 브라우징을 경험하세요.
+  image: https://brave.com/static-assets/images/brave-og.png
+  screenshot: screenshot/brave.com.png
+- url: https://conemu.github.io
+  domain: conemu.github.io
+  title: ConEmu - Handy Windows Terminal
+  description: ConEmu-Maximus5 is a full-featured local terminal for Windows devs,
+    admins and users. Get better console window with tabs, splits, Quake style, copy+paste,
+    DosBox and PuTTY integration, and much more.
+  image: https://conemu.github.io/img/ConEmu-Maximus5.png
+  screenshot: screenshot/conemu.github.io.png
+- url: https://curl.se/windows
+  domain: curl.se
+  title: curl for Windows
+  description: null
+  image: https://curl.se/pix/GS-Download-icon.svg
+  screenshot: screenshot/curl.se.png
+- url: https://echarts.apache.org/en/index.html
+  domain: echarts.apache.org
+  title: Apache ECharts
+  description: Apache ECharts, a powerful, interactive charting and visualization
+    library for browser
+  image: https://echarts.apache.org/en/images/logo.png
+  screenshot: screenshot/echarts.apache.org.png
+- url: https://handsontable.com/
+  domain: handsontable.com
+  title: Handsontable is a JavaScript data grid that looks and feels like a spreadsheet
+    - Available for React, Angular, and Vue
+  description: JavaScript data grid that looks and feels like a spreadsheet. Works
+    with React, Angular, and Vue.
+  image: https://handsontable.com/static/images/template/ModFrontpage/main-page-illustration.svg
+  screenshot: screenshot/handsontable.com.png
+- url: https://jsonpath.com
+  domain: jsonpath.com
+  title: JSONPath Online Evaluator
+  description: JSONPath Online Evaluator
+  image: null
+  screenshot: screenshot/jsonpath.com.png
+- url: https://jsonviewer.stack.hu/
+  domain: jsonviewer.stack.hu
+  title: Online JSON Viewer
+  description: JSON Viewer - Convert JSON Strings to a Friendly Readable Format
+  image: null
+  screenshot: screenshot/jsonviewer.stack.hu.png
+- url: https://kr.bandisoft.com/bandizip
+  domain: kr.bandisoft.com
+  title: 반디집 공식 홈페이지 · ALZ, EGG, 7Z, RAR 지원 무료 압축 프로그램
+  description: 반디집 공식 홈페이지
+  image: https://www.bandisoft.com/img/og/bandizip.png?2
+  screenshot: screenshot/kr.bandisoft.com.png
+- url: https://obsidian.md
+  domain: obsidian.md
+  title: Obsidian - Sharpen your thinking
+  description: Obsidian is the private and flexible note‑taking app that adapts to
+    the way you think.
+  image: https://obsidian.md/images/banner.png
+  screenshot: screenshot/obsidian.md.png
+- url: https://picpick.net
+  domain: picpick.net
+  title: 픽픽(PicPick) - 올인원 그래픽 디자인 도구 (화면 캡처 및 녹화, 이미지 편집, 색상 추출, 눈금자, 각도기, 십자선 등)
+  description: 픽픽(PicPick) - 올인원 그래픽 디자인 도구 (화면 캡처 및 녹화, 이미지 편집, 색상 추출, 눈금자, 각도기,
+    십자선 등)
+  image: https://picpick.net/static/logo-74929f92cead79160a18846cfc0e703b.png
+  screenshot: screenshot/picpick.net.png
+- url: https://primeng.org/uikit
+  domain: primeng.org
+  title: UI Kit - PrimeNG
+  description: PrimeNG Angular UI Kit
+  image: https://primefaces.org/cdn/primeng/images/primeng-logo-dark.svg
+  screenshot: screenshot/primeng.org.png
+- url: https://seekingalpha.com/
+  domain: seekingalpha.com
+  title: Seeking Alpha | Stock Market Analysis & Tools for Investors
+  description: Join Seeking Alpha, the largest investing community in the world. Get
+    stock market news and analysis, investing ideas, earnings calls, charts and portfolio
+    analysis tools.
+  image: https://seekingalpha.com/samw/static/images/portfolio.50cb2206.png
+  screenshot: screenshot/seekingalpha.com.png
+- url: https://shopify.github.io/liquid/
+  domain: shopify.github.io
+  title: Liquid template language
+  description: Documentation for the Liquid template language, created by Shopify.
+  image: https://shopify.github.io/liquid/images/jekyll-logo.png
+  screenshot: screenshot/shopify.github.io.png
+- url: https://tailwindcss.com/
+  domain: tailwindcss.com
+  title: Tailwind CSS - Rapidly build modern websites without ever leaving your HTML.
+  description: Tailwind CSS is a utility-first CSS framework for rapidly building
+    modern websites without ever leaving your HTML.
+  image: https://tailwindcss.com/_next/static/media/social-card-large.a6e71726.jpg
+  screenshot: screenshot/tailwindcss.com.png
+- url: https://tiberiuzuld.github.io/angular-gridster2/gridSizes
+  domain: tiberiuzuld.github.io
+  title: Gridster2
+  description: null
+  image: null
+  screenshot: screenshot/tiberiuzuld.github.io.png
+- url: https://winmerge.org
+  domain: winmerge.org
+  title: WinMerge - You will see the difference…
+  description: WinMerge is an Open Source differencing and merging tool for Windows.
+    WinMerge can compare both folders and files, presenting differences in a visual
+    text format that is easy to understand and handle.
+  image: https://winmerge.org/screenshots/filecmp.png
+  screenshot: screenshot/winmerge.org.png
