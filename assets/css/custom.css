@@ -1,0 +1,23 @@
+/* syntax highlight */
+.highlight table pre {
+  border: #E3EDF3 0px solid; 
+  color: #FFF;
+  background: transparent;
+  font-family: inherit;
+}
+
+/* page */
+.layout-page .article-post .dividend {
+    font-size: 0.9rem;
+}
+
+.dividend .rating-holder {
+  font-size: 13px;
+}
+
+.dividend .logo {
+  border-radius: 50%;
+  object-fit: contain;
+  transition: opacity 0.2s ease 0s;
+  width: 3.6rem;
+}
