@@ -127,7 +127,7 @@ var option = {
 // Display the chart using the configuration items and data just specified.
 myChart.setOption(option);
 
-$.get('assets/stocks/LOW_price_daily.csv').done(function(csv) {
+$.get('assets/stocks/LOW_price_1d.csv').done(function(csv) {
   // Date,Open,High,Low,Close,Adj Close,Volume
   var data = {
     dates: [],
