@@ -1,0 +1,188 @@
+---
+layout: page
+title: 차트 (HTML)
+permalink: /chart
+comments: false
+---
+<div id="main" style="width: 100%; height:600px;"></div>
+<script type="text/javascript">
+// Initialize the echarts instance based on the prepared dom
+var myChart = echarts.init(document.getElementById('main'));
+
+// Specify the configuration items and data for the chart
+const colors = ['#5470C6', '#91CC75', '#EE6666'];
+var option = {
+  color: colors,
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'line',
+      // axis: 'y',
+      snap: true
+    },    
+    position: function (pt) {
+      return [pt[0], '10%'];
+    }    
+  },
+  title: {
+    left: 'left',
+    text: 'low dividend chart'
+  },
+  toolbox: {
+    feature: {
+      dataZoom: {
+        yAxisIndex: 'none'
+      },
+      restore: {},
+      saveAsImage: {}
+    }
+  }, 
+  // grid: {
+  //   right: '0%'
+  // },   
+  legend: {
+    // orient: 'vertical',
+    // right: 10,
+    // top: 'center',
+    data: ['Dividend', 'Price']
+  },
+  xAxis: {
+    type: 'category',
+    boundaryGap: false,
+    data: []
+  },
+    dataZoom: [
+    {
+      type: 'slider',
+      //xAxisIndex: [0, 1],
+      start: 90,
+      end: 100,
+    },
+    {
+      type: 'inside',
+      //xAxisIndex: [0, 1],
+      start: 90,
+      end: 100
+    }
+  ],
+  yAxis: [
+    {
+      type: 'value',
+      name: 'Dividend',
+      position: 'right',
+      alignTicks: true,
+      axisLine: {
+        show: true,
+        lineStyle: {
+          color: colors[0]
+        }
+      },      
+      boundaryGap: [0, '10%'],
+      axisLabel: {
+        formatter: '{value} %'
+      }
+    },
+    {
+      type: 'value',
+      name: 'Price',
+      position: 'left',
+      alignTicks: true,
+      axisLine: {
+        show: true,
+        lineStyle: {
+          color: colors[1]
+        }
+      },
+      boundaryGap: [0, '10%'],
+      axisLabel: {
+        formatter: '{value} $'
+      }
+    },
+  ],
+  series: [
+    {
+      name: 'Dividend',
+      type: 'line',
+      zsmooth: true,
+      markPoint: {
+        data: [
+          { type: 'max', name: 'Max' },
+          { type: 'min', name: 'Min' }
+        ]
+      },
+      markLine: {
+        data: [{ type: 'average', name: 'Avg' }]
+      },      
+      data: []
+    },
+    {
+      name: 'Price',
+      type: 'line',
+      yAxisIndex: 1,
+      data: []
+    }    
+  ]
+};
+
+// Display the chart using the configuration items and data just specified.
+myChart.setOption(option);
+
+$.get('assets/stocks/LOW_price_daily.csv').done(function(csv) {
+  // Date,Open,High,Low,Close,Adj Close,Volume
+  var data = {
+    dates: [],
+    prices: [],
+    dividends: []
+  }
+
+  var lines = csv.split("\n");
+  console.log(lines[0]);
+  for(var i = 1; i < lines.length; i++) {
+      var tokens = lines[i].split(",");
+      data.dates.push(tokens[0]);
+      data.prices.push(parseFloat(tokens[4]).toFixed(2));
+  }
+
+  $.get('assets/stocks/LOW_dividend.csv').done(function(csv) {
+    // Date,Dividends
+    var lines = csv.split("\n");
+    console.log(lines[0]);
+  
+    var dividendDates = [];
+    var dividends = [];
+    for(var i = 1; i < lines.length; i++) {
+      var tokens = lines[i].split(",");
+      dividendDates.push(tokens[0]);
+      dividends.push(tokens[1]);
+    }
+
+    var lastDividend = 0;
+    for(var i = 0; i < data.dates.length; i++) {
+      var index = dividendDates.indexOf(data.dates[i]);
+      if( index == -1) {
+      } else {
+        lastDividend = dividends[index]
+      }
+      var dividendYieldRatio = lastDividend * 4 / data.prices[i] * 100;
+      data.dividends.push(dividendYieldRatio.toFixed(2));
+    }
+  
+    myChart.setOption({
+      xAxis: {
+        data: data.dates
+      },
+      series: [
+        {
+          //name: 'Dividend',
+          data: data.dividends,
+        },
+        {
+          //name: 'Price',
+          data: data.prices,          
+        }
+      ]
+    });  
+  });
+});
+
+</script>
