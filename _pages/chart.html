@@ -127,7 +127,7 @@ var option = {
 // Display the chart using the configuration items and data just specified.
 myChart.setOption(option);
 
-$.get('assets/stocks/LOW_price_1d.csv').done(function(csv) {
+$.get('{{ site.resources.data }}/stocks/LOW_price_1d.csv').done(function(csv) {
   // Date,Open,High,Low,Close,Adj Close,Volume
   var data = {
     dates: [],
@@ -143,7 +143,7 @@ $.get('assets/stocks/LOW_price_1d.csv').done(function(csv) {
       data.prices.push(parseFloat(tokens[4]).toFixed(2));
   }
 
-  $.get('assets/stocks/LOW_dividend.csv').done(function(csv) {
+  $.get('{{ site.resources.data }}/stocks/LOW_dividend.csv').done(function(csv) {
     // Date,Dividends
     var lines = csv.split("\n");
     console.log(lines[0]);

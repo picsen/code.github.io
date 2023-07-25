@@ -13,6 +13,12 @@ mailchimp-list: https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a5
 include: ["_pages"]
 permalink: /:title/
 
+# Resources
+#https://picsen.github.io/6BA69B9925BED295F44BE6BD587EAC4EC90870A2397C537FB6336087AC4E10607CCC8F/assets/images/symbol/svg/AAPL.svg
+#https://picsen.github.io/77C7CE9A5D86BB386D443BB96390FAA120633158699C8844C30B13AB0BF92760B7E441/assets/data/stocks/A_dividend.csv
+resources:
+  cdn: https://picsen.github.io/6BA69B9925BED295F44BE6BD587EAC4EC90870A2397C537FB6336087AC4E10607CCC8F/assets/images
+  data: https://picsen.github.io/77C7CE9A5D86BB386D443BB96390FAA120633158699C8844C30B13AB0BF92760B7E441/assets/data
 # Authors
 authors:
   picsen:

@@ -24,7 +24,7 @@ comments: true
     <tr>
       <td class="align-middle">{{ forloop.index }}</td>
       <td class="align-middle">{{ dividend.symbol }}</td>
-      <td class="align-middle"><img src="/assets/images/symbol/{{ dividend.symbol }}.png" class="img-responsive center-block logo" /> {{ dividend.company | replace: "Dividend Information", "" }}</td>
+      <td class="align-middle"><img src="{{ site.resources.cdn }}/symbol/svg/{{ dividend.symbol }}.svg" class="img-responsive center-block logo" onerror="this.src='{{ site.resources.cdn }}/symbol/png/{{ dividend.symbol }}.png'"/> {{ dividend.company | replace: "Dividend Information", "" }}</td>
       <td class="align-middle">
         <div class="rating-holder">
             <div class="c-rating c-rating--regular" data-rating-value="{{ dividend["Dividend AllStar™ Ranking"] }}">
