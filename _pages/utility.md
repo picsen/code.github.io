@@ -10,26 +10,66 @@ manatoki: {{ site.data.site_checker_result['manatoki'] }}
 <script>alert(0);</script>
 -->
 <script>
+function validate(o) {
+    if( o.value.trim() == '') {
+        alert('변경할려는 문자열을 입력해주세요.');
+        o.focus();
+        return false;
+    }
+
+    return true;
+}
+
+function strToList(s) {
+    const lines = s.split("\n");
+    let outputs = [];
+    for(let i = 0; i < lines.length; i++) {
+        outputs.push('"' + lines[i].trim() + '"');
+    }
+
+    return '[' + outputs.join(', ') + ']';
+}
+
 document.addEventListener("DOMContentLoaded", function(){
-    var today = new Date();
-    var year = today.getFullYear();
-    var month = ('0' + (today.getMonth() + 1)).slice(-2);
-    var day = ('0' + today.getDate()).slice(-2);
+    const md = function() {
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = ('0' + (today.getMonth() + 1)).slice(-2);
+        const day = ('0' + today.getDate()).slice(-2);
+        const date = year + '-' + month  + '-' + day;
+        const frmMd = document.querySelector('form[name="frmMd"]');
+        frmMd.querySelector('textarea[name="output"]').placeholder = date + '-how-to-convert-file-name.md';
+        frmMd.querySelector('button').addEventListener('click', function(event) {
+            // event.preventDefault();
+            const input = frmMd.querySelector('textarea[name="input"]');
+            const inputValue = input.value.trim();
+            if( !validate(input)) {
+                return;
+            }
 
-    var date = year + '-' + month  + '-' + day;
-    document.getElementById('output').placeholder = date + '-how-to-convert-file-name.md';
+            const replacement = inputValue.toLowerCase().replace(/[^\w]+/g, ' ').replace(/[_-]+/g, ' ').trim().replace(/[ ]+/g, '-');
+            frmMd.querySelector('textarea[name="output"]').value = date + '-' + replacement + '.md';
+        });
+    }
 
-    document.getElementById('convert').addEventListener('click', function(event) {
-        // event.preventDefault();
-        var input = document.getElementById('input').value.trim();
-        if( input == '') {
-            alert('변경할 파일명을 입력해주세요.');
-            document.getElementById('input').focus();
-            return;
-        }
-        var replacement = input.toLowerCase().replace(/[^\w]+/g, ' ').replace(/[_-]+/g, ' ').trim().replace(/[ ]+/g, '-');
-        document.getElementById('output').value = date + '-' + replacement + '.md';
-    });
+    md();
+
+    const json = function() {
+        const frmJson = document.querySelector('form[name="frmJson"]');
+        const input = frmJson.querySelector('textarea[name="input"]');
+        const output = frmJson.querySelector('textarea[name="output"]');
+
+        frmJson.querySelector('button').addEventListener('click', function(event) {
+            if( !validate(input)) {
+                return;
+            }
+            output.value = strToList(input.value.trim());
+        });
+
+        output.placeholder = strToList(input.placeholder);
+    }
+
+    json();
 
 });
 </script>
@@ -37,15 +77,15 @@ document.addEventListener("DOMContentLoaded", function(){
 <div class="row justify-content-between">
     <div class="col-md-8 pr-5" >
         <h4>Jekyll 마크다운 파일명 변환기</h4>
-        <form>
+        <form name="frmMd">
             <div class="form-group">
                 <label for="raw">변경할 문구</label>
-                <textarea class="form-control" id="input" rows="3" placeholder="how to convert file name"></textarea>
+                <textarea class="form-control" name="input" rows="3" placeholder="how to convert file name"></textarea>
             </div>
-            <button type="button" class="btn btn-primary btn-sm float-right" id="convert">변환하기</button>
+            <button type="button" class="btn btn-primary btn-sm float-right">변환하기</button>
             <div class="form-group">
                 <label for="output">변경된 파일 이름</label>
-                <textarea class="form-control" id="output" rows="3"></textarea>
+                <textarea class="form-control" name="output" rows="3"></textarea>
             </div>
         </form>
 
@@ -76,6 +116,21 @@ document.addEventListener("DOMContentLoaded", function(){
 
         </div>
     </div>
+    
+    <div class="col-md-8 pr-5" >
+        <h4>JSON 변환기</h4>
+        <form name="frmJson">
+            <div class="form-group">
+                <label for="raw">입력 문자열</label>
+                <textarea class="form-control" name="input" rows="3" placeholder="first&#10;second&#10;third"></textarea>
+            </div>
+            <button type="button" class="btn btn-primary btn-sm float-right">변환하기</button>
+            <div class="form-group">
+                <label for="output">JSON</label>
+                <textarea class="form-control" name="output" rows="3" placeholder=""></textarea>
+            </div>
+        </form>
+    </div>    
 </div>
 ```javascript
         var input = document.getElementById('input').value;
