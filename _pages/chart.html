@@ -5,7 +5,9 @@ permalink: /chart
 comments: false
 ---
 <div id="main" style="width: 100%; height:600px;"></div>
+
 <script type="text/javascript">
+var symbol = location.href.split("#")[1];
 // Initialize the echarts instance based on the prepared dom
 var myChart = echarts.init(document.getElementById('main'));
 
@@ -26,7 +28,7 @@ var option = {
   },
   title: {
     left: 'left',
-    text: 'low dividend chart'
+    text: symbol + ' dividend chart'
   },
   toolbox: {
     feature: {
@@ -127,7 +129,7 @@ var option = {
 // Display the chart using the configuration items and data just specified.
 myChart.setOption(option);
 
-$.get('{{ site.resources.data }}/stocks/LOW_price_1d.csv').done(function(csv) {
+$.get('{{ site.resources.data }}/stocks/' + symbol + '_price_1d.csv').done(function(csv) {
   // Date,Open,High,Low,Close,Adj Close,Volume
   var data = {
     dates: [],
@@ -143,7 +145,7 @@ $.get('{{ site.resources.data }}/stocks/LOW_price_1d.csv').done(function(csv) {
       data.prices.push(parseFloat(tokens[4]).toFixed(2));
   }
 
-  $.get('{{ site.resources.data }}/stocks/LOW_dividend.csv').done(function(csv) {
+  $.get('{{ site.resources.data }}/stocks/' + symbol + '_dividend.csv').done(function(csv) {
     // Date,Dividends
     var lines = csv.split("\n");
     console.log(lines[0]);
