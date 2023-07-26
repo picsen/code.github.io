@@ -23,7 +23,7 @@ resources:
 authors:
   picsen:
     name: picsen
-    display_name: 아지기    
+    display_name: 아지기
     avatar: assets/images/avatar.jpg
     gravatar: 56a7055200eb4ee82b064d3d9ab47788
     email: picsen@naver.com
@@ -69,7 +69,7 @@ adsense-data-ad-slot: 1363087678
 # Lazy Images ("enabled" or "disabled")
 lazyimages: disabled
 
-exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock, Mediumish_template.xlsx, Templates, .obsidian]
+exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock, Mediumish_template.xlsx, Templates, .obsidian, temp, _drafts]
 
 #timezone: Asia/Seoul
 future: true
