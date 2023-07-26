@@ -19,15 +19,15 @@ comments: true
       <th scope="col" class="align-middle">Consecutive Dividend Increases</th>
     </tr>
   <tbody>
-{% assign dividends = site.data.dividends | sort: "Dividend AllStar™ Ranking" | reverse %}
-{%- for dividend in dividends -%}  
+
+{%- for dividend in site.data.dividends -%}  
     <tr>
       <td class="align-middle">{{ forloop.index }}</td>
-      <td class="align-middle">{{ dividend.symbol }}</td>
-      <td class="align-middle"><img src="{{ site.resources.cdn }}/symbol/svg/{{ dividend.symbol }}.svg" class="img-responsive center-block logo" onerror="this.src='{{ site.resources.cdn }}/symbol/png/{{ dividend.symbol }}.png'"/> {{ dividend.company | replace: "Dividend Information", "" }}</td>
+      <td class="align-middle">{{ dividend.s }}</td>
+      <td class="align-middle"><img src="{{ site.resources.cdn }}/symbol/svg/{{ dividend.s }}.svg" class="img-responsive center-block logo" onerror="this.src='/assets/images/failure.svg';"/> {{ dividend.c | replace: "Dividend Information", "" }}</td>
       <td class="align-middle">
         <div class="rating-holder">
-            <div class="c-rating c-rating--regular" data-rating-value="{{ dividend["Dividend AllStar™ Ranking"] }}">
+            <div class="c-rating c-rating--regular" data-rating-value="{{ dividend["r"] }}">
               <button>1</button>
               <button>2</button>
               <button>3</button>
@@ -36,14 +36,26 @@ comments: true
           </div>
       </div>
     </td>
-    <td class="align-middle">{{ dividend["Dividend Rate"] }}</td>
-    <td class="align-middle">{{ dividend["Trailing 12 Month Dividend Yield"] | replace: "Currency Mismatch", "-" }}</td>
-    <td class="align-middle">{{ dividend["Dividend Yield 5 Year Average"] | replace: "Currency Mismatch", "-" }}</td>
-    <td class="align-middle">{{ dividend["Dividend Payout Ratio"] | replace: "Currency Mismatch", "-" }}</td>
-    <td class="align-middle">{{ dividend["Dividend Payout Ratio 5 yr Average"] | replace: "Currency Mismatch", "-" }}</td>
-    <td class="align-middle">{{ dividend["Consecutive Dividend Increases"] }}</td> 
+    <td class="align-middle">{{ dividend["y"] }}</td>
+    <td class="align-middle">{{ dividend["yr"] | replace: "Currency Mismatch", "-" }}</td>
+    <td class="align-middle">{{ dividend["y5y"] | replace: "Currency Mismatch", "-" }}</td>
+    <td class="align-middle">{{ dividend["pr"] | replace: "Currency Mismatch", "-" }}</td>
+    <td class="align-middle">{{ dividend["pr5y"] | replace: "Currency Mismatch", "-" }}</td>
+    <td class="align-middle">{{ dividend["i"] }}</td>
   </tr>
 {%- endfor -%}
   </tbody>
   </table>
 </div>
+<script>
+document.addEventListener("DOMContentLoaded", function(){  
+  document.querySelectorAll("table.table img").forEach(function(elm) {
+    if( elm.src.indexOf("failure.svg") > -1 ) {
+      const symbol = elm.parentElement.parentElement.childNodes[3].innerText;
+      //console.log(symbol);
+      elm.src = "{{ site.resources.cdn }}/symbol/png//" + symbol + ".png";
+    }
+  });
+});
+  
+</script>
