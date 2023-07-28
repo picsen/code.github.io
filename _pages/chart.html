@@ -8,9 +8,11 @@ comments: false
 
 <script type="text/javascript">
 
-document.addEventListener("DOMContentLoaded", function(){  
-  var symbol = location.href.split("#")[1].toUpperCase();
-  console.log("symbol2:", symbol);
+document.addEventListener("DOMContentLoaded", function() {
+  const url = new URL(location.href);  
+  const params = new URLSearchParams(url.search);
+  const symbol = params.get("s").toUpperCase();
+  console.log("symbol:", symbol);
 
 // Initialize the echarts instance based on the prepared dom
 var myChart = echarts.init(document.getElementById('main'));

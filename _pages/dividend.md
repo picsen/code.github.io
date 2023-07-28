@@ -23,7 +23,7 @@ comments: true
 {%- for dividend in site.data.dividends -%}  
     <tr>
       <td class="align-middle">{{ forloop.index }}</td>
-      <td class="align-middle">{{ dividend.s }}</td>
+      <td class="align-middle"><a href="/chart?s={{ dividend.s }}" target="chart">{{ dividend.s }}</a></td>
       <td class="align-middle"><img src="{{ site.resources.cdn }}/symbol/svg/{{ dividend.s }}.svg" class="img-responsive center-block logo" onerror="this.src='/assets/images/failure.svg';"/> {{ dividend.c | replace: "Dividend Information", "" }}</td>
       <td class="align-middle">
         <div class="rating-holder">
