@@ -3,7 +3,8 @@ layout: page
 title: 사이트 바로가기
 permalink: /shortcut
 comments: true
-published: false
+published: true
+sitemap: false
 ---
 #### 토렌트큐큐 접속 URL
 [{{ site.data.site_checker_result['torrentqq'] }}]({{ site.data.site_checker_result['torrentqq'] }}){:target="_blank" rel="noopener"}  
